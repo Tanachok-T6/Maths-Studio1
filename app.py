@@ -10,32 +10,32 @@ import time
 # ==========================================
 QUIZ_DATA = {
     1:[
-        {"q": "2x + 3x ", "options": ["5x", "6x", "5x^2", "x"], "ans": "5x"},
-        {"q": "5y - 2y ", "options":["3", "3y", "7y", "10y"], "ans": "3y"},
-        {"q": "4a + a ", "options":["4", "5a", "4a^2", "a"], "ans": "5a"},
-        {"q": "10b - 4b ", "options":["6", "14b", "6b", "6b^2"], "ans": "6b"},
-        {"q": "x + x + x ", "options": ["3x", "x^3", "3", "3x^2"], "ans": "3x"},
+        {"q": "2x + 3x มีค่าเท่ากับเท่าใด?", "options": ["5x", "6x", "5x^2", "x"], "ans": "5x"},
+        {"q": "5y - 2y มีค่าเท่ากับเท่าใด?", "options":["3", "3y", "7y", "10y"], "ans": "3y"},
+        {"q": "4a + a มีค่าเท่ากับเท่าใด?", "options":["4", "5a", "4a^2", "a"], "ans": "5a"},
+        {"q": "10b - 4b มีค่าเท่ากับเท่าใด?", "options":["6", "14b", "6b", "6b^2"], "ans": "6b"},
+        {"q": "x + x + x มีค่าเท่ากับเท่าใด?", "options": ["3x", "x^3", "3", "3x^2"], "ans": "3x"},
     ],
     2:[
-        {"q": "x * x ", "options":["2x", "x^2", "x", "1"], "ans": "x^2"},
-        {"q": "2x * 3x ", "options": ["5x", "6x", "6x^2", "5x^2"], "ans": "6x^2"},
-        {"q": "4y * 2 ", "options": ["6y", "8y", "8", "8y^2"], "ans": "8y"},
-        {"q": "(-3a) * 2a ", "options": ["-6a", "-6a^2", "6a^2", "-a"], "ans": "-6a^2"},
-        {"q": "5b * (-2b) ", "options": ["-10b^2", "10b^2", "-3b", "-10b"], "ans": "-10b^2"},
+        {"q": "x * x มีค่าเท่ากับเท่าใด?", "options":["2x", "x^2", "x", "1"], "ans": "x^2"},
+        {"q": "2x * 3x มีค่าเท่ากับเท่าใด?", "options": ["5x", "6x", "6x^2", "5x^2"], "ans": "6x^2"},
+        {"q": "4y * 2 มีค่าเท่ากับเท่าใด?", "options": ["6y", "8y", "8", "8y^2"], "ans": "8y"},
+        {"q": "(-3a) * 2a มีค่าเท่ากับเท่าใด?", "options": ["-6a", "-6a^2", "6a^2", "-a"], "ans": "-6a^2"},
+        {"q": "5b * (-2b) มีค่าเท่ากับเท่าใด?", "options": ["-10b^2", "10b^2", "-3b", "-10b"], "ans": "-10b^2"},
     ],
     3:[
-        {"q": "2(x + 3) ", "options":["2x + 3", "2x + 6", "5x", "x + 6"], "ans": "2x + 6"},
-        {"q": "3(y - 2) ", "options": ["3y - 6", "3y - 2", "y - 6", "-3y"], "ans": "3y - 6"},
-        {"q": "-2(a + 4) ", "options":["-2a + 8", "-2a - 4", "-2a - 8", "2a - 8"], "ans": "-2a - 8"},
-        {"q": "x(x + 5) ", "options":["x^2 + 5", "x^2 + 5x", "2x + 5", "5x^2"], "ans": "x^2 + 5x"},
-        {"q": "2y(y - 3) ", "options":["2y^2 - 3", "2y^2 - 6y", "2y - 6y", "4y^2"], "ans": "2y^2 - 6y"},
+        {"q": "2(x + 3) มีค่าเท่ากับเท่าใด?", "options":["2x + 3", "2x + 6", "5x", "x + 6"], "ans": "2x + 6"},
+        {"q": "3(y - 2) มีค่าเท่ากับเท่าใด?", "options": ["3y - 6", "3y - 2", "y - 6", "-3y"], "ans": "3y - 6"},
+        {"q": "-2(a + 4) มีค่าเท่ากับเท่าใด?", "options":["-2a + 8", "-2a - 4", "-2a - 8", "2a - 8"], "ans": "-2a - 8"},
+        {"q": "x(x + 5) มีค่าเท่ากับเท่าใด?", "options":["x^2 + 5", "x^2 + 5x", "2x + 5", "5x^2"], "ans": "x^2 + 5x"},
+        {"q": "2y(y - 3) มีค่าเท่ากับเท่าใด?", "options":["2y^2 - 3", "2y^2 - 6y", "2y - 6y", "4y^2"], "ans": "2y^2 - 6y"},
     ],
     4:[
-        {"q": "(x + 1)(x + 2) ", "options":["x^2 + 3x + 2", "x^2 + 2", "2x + 3", "x^2 + 2x + 1"], "ans": "x^2 + 3x + 2"},
-        {"q": "(y - 2)(y + 3) ", "options":["y^2 + y - 6", "y^2 - 6", "y^2 + 5y - 6", "2y + 1"], "ans": "y^2 + y - 6"},
-        {"q": "(a + 3)^2 ", "options":["a^2 + 9", "a^2 + 6a + 9", "2a + 6", "a^2 + 3a + 9"], "ans": "a^2 + 6a + 9"},
-        {"q": "(b - 4)(b - 4) ", "options":["b^2 - 16", "b^2 - 8b + 16", "b^2 + 16", "2b - 8"], "ans": "b^2 - 8b + 16"},
-        {"q": "(x + 5)(x - 5) ", "options":["x^2 - 25", "x^2 + 25", "x^2 - 10x - 25", "2x"], "ans": "x^2 - 25"},
+        {"q": "(x + 1)(x + 2) มีค่าเท่ากับเท่าใด?", "options":["x^2 + 3x + 2", "x^2 + 2", "2x + 3", "x^2 + 2x + 1"], "ans": "x^2 + 3x + 2"},
+        {"q": "(y - 2)(y + 3) มีค่าเท่ากับเท่าใด?", "options":["y^2 + y - 6", "y^2 - 6", "y^2 + 5y - 6", "2y + 1"], "ans": "y^2 + y - 6"},
+        {"q": "(a + 3)^2 มีค่าเท่ากับเท่าใด?", "options":["a^2 + 9", "a^2 + 6a + 9", "2a + 6", "a^2 + 3a + 9"], "ans": "a^2 + 6a + 9"},
+        {"q": "(b - 4)(b - 4) มีค่าเท่ากับเท่าใด?", "options":["b^2 - 16", "b^2 - 8b + 16", "b^2 + 16", "2b - 8"], "ans": "b^2 - 8b + 16"},
+        {"q": "(x + 5)(x - 5) มีค่าเท่ากับเท่าใด?", "options":["x^2 - 25", "x^2 + 25", "x^2 - 10x - 25", "2x"], "ans": "x^2 - 25"},
     ],
     5:[
         {"q": "แยกตัวประกอบ x^2 + 5x + 6", "options":["(x+1)(x+6)", "(x+2)(x+3)", "(x-2)(x-3)", "(x+5)(x+1)"], "ans": "(x+2)(x+3)"},
@@ -108,35 +108,32 @@ def check_answer(selected, correct):
 # ==========================================
 # 3. CSS ตกแต่ง
 # ==========================================
+st.set_page_config(page_title="Maths Studio", page_icon="🔢", layout="wide")
 st.markdown("""
 <style>
-    /* ปรับ Overlay ให้เต็มจอและแสดงผลเครื่องหมายขนาดใหญ่มาก */
-    .feedback-overlay { 
-        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
-        background: rgba(255, 255, 255, 0.98); /* เพิ่มความทึบแสงเพื่อให้เห็นชัดขึ้น */
-        z-index: 999999; 
-        display: flex; flex-direction: column; justify-content: center; align-items: center; 
+    /* บังคับสีพื้นหลังของกล่องโจทย์ */
+    .question-box { 
+        background-color: #ffffff !important; 
+        color: #000000 !important; 
+        padding: 30px; 
+        border-radius: 20px; 
+        border: 2px solid #0d6efd; 
+        font-size: 24px; 
+        font-weight: bold; 
+        text-align: center; 
+        margin-bottom: 20px; 
     }
     
-    /* ขนาดเครื่องหมายใหญ่สะใจ 300px */
-    .big-icon { 
-        font-size: 300px; 
-        animation: pulse 0.5s ease-in-out; 
-    }
-    
-    @keyframes pulse {
-        0% { transform: scale(0.5); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-    
-    /* แก้ไขปัญหาปุ่มใน Dark Mode ให้เห็นชัด */
+    /* บังคับสีตัวอักษรในปุ่มให้เห็นชัดใน Dark Mode */
     div[data-testid="stButton"] button {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        border: 2px solid #0d6efd !important;
-        font-size: 18px !important;
-        font-weight: bold !important;
+        color: #000000 !important; /* บังคับให้ตัวหนังสือในปุ่มเป็นสีดำ */
+        background-color: #f8f9fa !important;
+        border: 1px solid #ced4da !important;
     }
+    
+    /* ส่วนเดิมของคุณ */
+    .school-title { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 999999; font-size: 26px; font-weight: 800; color: #FFFFFF !important; }
+    .feedback-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(255, 255, 255, 0.9); z-index: 99999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -162,7 +159,7 @@ if st.session_state.feedback:
     time.sleep(1.2) # หน่วงเวลาไว้เพื่อให้เห็นเต็มๆ ตา 1.2 วินาที
     st.session_state.feedback = None
     st.rerun()
-
+    
 # ==========================================
 # 5. แถบข้าง (Sidebar)
 # ==========================================
