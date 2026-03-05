@@ -123,12 +123,24 @@ st.markdown("""
         text-align: center; 
         margin-bottom: 20px; 
     }
+            
+    .big-icon { 
+        font-size: 300px; 
+        animation: pulse 0.5s ease-in-out; 
+    }
+            
+    @keyframes pulse {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
     
     /* บังคับสีตัวอักษรในปุ่มให้เห็นชัดใน Dark Mode */
     div[data-testid="stButton"] button {
-        color: #000000 !important; /* บังคับให้ตัวหนังสือในปุ่มเป็นสีดำ */
-        background-color: #f8f9fa !important;
-        border: 1px solid #ced4da !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 2px solid #0d6efd !important;
+        font-size: 18px !important;
+        font-weight: bold !important;
     }
     
     /* ส่วนเดิมของคุณ */
@@ -159,7 +171,7 @@ if st.session_state.feedback:
     time.sleep(1.2) # หน่วงเวลาไว้เพื่อให้เห็นเต็มๆ ตา 1.2 วินาที
     st.session_state.feedback = None
     st.rerun()
-    
+
 # ==========================================
 # 5. แถบข้าง (Sidebar)
 # ==========================================
