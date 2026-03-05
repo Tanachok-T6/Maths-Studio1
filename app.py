@@ -124,6 +124,13 @@ st.markdown("""
         margin-bottom: 20px; 
     }
             
+    .feedback-overlay { 
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
+        background: rgba(255, 255, 255, 0.98); /* เพิ่มความทึบแสงเพื่อให้เห็นชัดขึ้น */
+        z-index: 999999; 
+        display: flex; flex-direction: column; justify-content: center; align-items: center; 
+    }
+            
     .big-icon { 
         font-size: 300px; 
         animation: pulse 0.5s ease-in-out; 
