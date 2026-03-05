@@ -108,17 +108,32 @@ def check_answer(selected, correct):
 # ==========================================
 # 3. CSS ตกแต่ง
 # ==========================================
-st.set_page_config(page_title="Maths Studio", page_icon="🔢", layout="wide")
 st.markdown("""
 <style>
-    .stApp { background-color: #f8f9fa; }
+    /* บังคับสีพื้นหลังของกล่องโจทย์ */
+    .question-box { 
+        background-color: #ffffff !important; 
+        color: #000000 !important; 
+        padding: 30px; 
+        border-radius: 20px; 
+        border: 2px solid #0d6efd; 
+        font-size: 24px; 
+        font-weight: bold; 
+        text-align: center; 
+        margin-bottom: 20px; 
+    }
+    
+    /* บังคับสีตัวอักษรในปุ่มให้เห็นชัดใน Dark Mode */
+    div[data-testid="stButton"] button {
+        color: #000000 !important; /* บังคับให้ตัวหนังสือในปุ่มเป็นสีดำ */
+        background-color: #f8f9fa !important;
+        border: 1px solid #ced4da !important;
+    }
+    
+    /* ส่วนเดิมของคุณ */
     .school-title { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 999999; font-size: 26px; font-weight: 800; color: #FFFFFF !important; }
     .feedback-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(255, 255, 255, 0.9); z-index: 99999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-    .icon-correct { font-size: 120px; color: #28a745; }
-    .icon-incorrect { font-size: 120px; color: #dc3545; }
-    .question-box { background: white; padding: 30px; border-radius: 20px; border: 2px solid #0d6efd; font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 20px; }
 </style>
-<div class="school-title">CRMS6</div>
 """, unsafe_allow_html=True)
 
 # ==========================================
