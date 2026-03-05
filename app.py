@@ -183,6 +183,7 @@ if st.session_state.feedback:
 # 5. แถบข้าง (Sidebar)
 # ==========================================
 with st.sidebar:
+    st.image("IMAGE/logo_CRMS6.png", use_container_width=True)
     st.header("🔢 Maths Studio")
     st.write(f"🌐 IP: {st.session_state.ip}")
     st.write(f"👥 ออนไลน์: {global_tracker.active_count}")
@@ -192,11 +193,6 @@ with st.sidebar:
         if st.button(f"ด่านที่ {i} {'🔒' if disabled else '🟢'}", disabled=disabled, use_container_width=True):
             change_level(i)
             st.rerun()
-    try: 
-        st.image("IMAGE/logo_CRMS6.png", use_container_width=True)
-    except: 
-        st.write("🏫 CRMS6")
-    st.header("🔢 Maths Studio")
 
 # ==========================================
 # 6. หน้าจอหลัก
