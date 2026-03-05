@@ -110,29 +110,33 @@ def check_answer(selected, correct):
 # ==========================================
 st.markdown("""
 <style>
-    /* บังคับสีพื้นหลังของกล่องโจทย์ */
-    .question-box { 
-        background-color: #ffffff !important; 
-        color: #000000 !important; 
-        padding: 30px; 
-        border-radius: 20px; 
-        border: 2px solid #0d6efd; 
-        font-size: 24px; 
-        font-weight: bold; 
-        text-align: center; 
-        margin-bottom: 20px; 
+    /* ปรับ Overlay ให้เต็มจอและแสดงผลเครื่องหมายขนาดใหญ่มาก */
+    .feedback-overlay { 
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
+        background: rgba(255, 255, 255, 0.98); /* เพิ่มความทึบแสงเพื่อให้เห็นชัดขึ้น */
+        z-index: 999999; 
+        display: flex; flex-direction: column; justify-content: center; align-items: center; 
     }
     
-    /* บังคับสีตัวอักษรในปุ่มให้เห็นชัดใน Dark Mode */
+    /* ขนาดเครื่องหมายใหญ่สะใจ 300px */
+    .big-icon { 
+        font-size: 300px; 
+        animation: pulse 0.5s ease-in-out; 
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+    
+    /* แก้ไขปัญหาปุ่มใน Dark Mode ให้เห็นชัด */
     div[data-testid="stButton"] button {
-        color: #000000 !important; /* บังคับให้ตัวหนังสือในปุ่มเป็นสีดำ */
-        background-color: #f8f9fa !important;
-        border: 1px solid #ced4da !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 2px solid #0d6efd !important;
+        font-size: 18px !important;
+        font-weight: bold !important;
     }
-    
-    /* ส่วนเดิมของคุณ */
-    .school-title { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 999999; font-size: 26px; font-weight: 800; color: #FFFFFF !important; }
-    .feedback-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(255, 255, 255, 0.9); z-index: 99999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -140,10 +144,22 @@ st.markdown("""
 # 4. แสดงผล Feedback (ถูก/ผิด)
 # ==========================================
 if st.session_state.feedback:
-    icon = "✅" if st.session_state.feedback == 'correct' else "❌"
-    cls = "icon-correct" if st.session_state.feedback == 'correct' else "icon-incorrect"
-    st.markdown(f"<div class='feedback-overlay'><div class='{cls}'>{icon}</div></div>", unsafe_allow_html=True)
-    time.sleep(1)
+    if st.session_state.feedback == 'correct':
+        st.markdown("""
+            <div class='feedback-overlay'>
+                <div class='big-icon'>✅</div>
+                <h1 style='color: #28a745; font-size: 60px;'>ถูกต้อง!</h1>
+            </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+            <div class='feedback-overlay'>
+                <div class='big-icon'>❌</div>
+                <h1 style='color: #dc3545; font-size: 60px;'>ผิดพลาด!</h1>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    time.sleep(1.2) # หน่วงเวลาไว้เพื่อให้เห็นเต็มๆ ตา 1.2 วินาที
     st.session_state.feedback = None
     st.rerun()
 
